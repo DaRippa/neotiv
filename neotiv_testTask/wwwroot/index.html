@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>COVID-19 Client</title>
+        <meta name="author" content="Henry Cermann">
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+        <link type="text/css" href="include/css/style.css" rel="stylesheet"/>
+    </head>
+    <script src="include/js/jquery-3.6.0.min.js"></script>
+    <script src="include/js/neotiv.js" defer></script>
+    <body>
+        <div style="position: absolute; width: 100%;">
+            <div style="width: 75%; position: relative; margin: 0 auto; margin-top: 40px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Infected on</td>
+                            <td>Status</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody id="listDisplay">                    
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Filter:</td>
+                            <td><input id="FilterDate" type="date"></td>
+                            <td>
+                                <select id="FilterState">
+                                    <option value="0">N/A</option>
+                                    <option value="2">Cured</option>
+                                    <option value="1">Infected</option>
+                                    <option value="3">Deceased</option>
+                                </select>
+                            </td>
+                            <td><Button id="btnAdd">+ Add</Button></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        <div id="frmContainer">
+            <div style="position: relative; padding: 10px; border-radius: 10px; width: 60%; background: white; box-shadow: 5px 5px 10px 5px rgba(80, 80, 80, 0.4);">
+                <form id="AddEntryForm" onsubmit="javascript: return false;">
+                    <div><input type="text" name="lastName" required/><label for="lastName">Last name</label></div>
+                    <div><input type="text" name="firstName" required/><label for="firstName">First name</label></div>
+                    <div><input type="date" name="infectedOn" required/><label for="infectedOn">Infected on</label></div>
+                    <div><label for="status">Current status:</label>
+                        <select name="status">
+                            <option value="0">N/A</option>
+                            <option value="2">Cured</option>
+                            <option value="1">Infected</option>
+                            <option value="3">Deceased</option>
+                        </select>
+                    </div>
+                    <div class="buttonContainer"><Button id="btnDoAdd">Save</Button><Button type="reset" id="btnCancelAdd">Cancel</Button></div>
+                </form>
+                <form id="EditEntryForm" onsubmit="javascript: return false;">
+                    <div id="EditName"></div>
+                    <div id="EditInfected"> </div>
+                    <input type="hidden" name="ID">
+                    <div><label for="statusEdit"><strong>Current status:</strong></label>
+                        <select name="statusEdit">
+                            <option value="0">N/A</option>
+                            <option value="2">Cured</option>
+                            <option value="1">Infected</option>
+                            <option value="3">Deceased</option>
+                        </select>
+                    </div>
+                    <div class="buttonContainer"><Button id="btnDoEdit">Save</Button><Button type="reset" id="btnCancelEdit">Cancel</Button></div>
+                </form>
+            </div>
+        </div>
+        <div class="feedbackContainer">
+            <div id="feedback" class="closed"></div>
+        </div>
+    </body>
+</html>

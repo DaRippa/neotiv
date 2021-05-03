@@ -1,0 +1,171 @@
+html, body {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-family: "Source Sans Pro";
+}
+
+Button{
+    border: 1px solid dimgray;
+    border-radius: 3px;
+    background-color: lightgray;
+    color: dimgray;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+#btnAdd {
+    padding: 5px 20px;
+}
+
+#frmContainer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    visibility: collapse;
+    background: rgba(255, 255, 255, 0.555);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#frmContainer .buttonContainer {
+    margin-bottom: 1.5em;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#frmContainer .buttonContainer button {
+    flex-shrink: 1;
+    flex-grow: 1;
+    margin: 0 1em;
+}
+
+form {
+    position: relative;
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    outline: 1px solid dimgray;
+}
+
+form div {
+    width: 80%;
+    margin-top: 3em;
+    position: relative;
+}
+
+form input {
+    background: transparent;
+    border: 0 solid dimgray;
+    border-bottom-width: 1px;
+    position: absolute;
+    width: 80%;
+}
+
+form label {
+    position: absolute;
+    top: -0.2em;
+    width: 80%;
+    text-align: center;
+    pointer-events: none;
+    transition: font-size 0.15s linear 0s, top 0.15s linear 0s;
+}
+
+form label[for=status],
+form label[for=statusEdit]{
+    position: relative;
+    width: auto;
+}
+
+form input:focus + label,
+form input:valid + label {
+    font-size: 0.75em;
+    top: -1.2em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+thead, tfoot {
+    font-weight: bold;
+    font-size: 1.25em;
+    background-color: rgb(172, 112, 190);
+    color: white;
+    vertical-align: baseline;
+}
+
+thead td, tfoot td {
+    padding: 10px 0 5px 0;
+}
+
+tbody tr {
+    background-color: white;
+    color: dimgray;
+}
+
+tbody tr:nth-child(even)
+{
+    background-color: rgb(235, 227, 238);
+}
+
+tbody td {
+    padding: 2px 20px;
+}
+
+tfoot tr {
+    vertical-align: middle;
+}
+
+tfoot input, tfoot select {
+    min-width: 100px;
+}
+
+.feedbackContainer {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    bottom: 0;
+}
+
+#feedback{
+    width: 50%;
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 2em 2em 2em 5em;
+    transition: opacity 0.15s linear 0s, transform 0.15s linear 0s;
+}
+
+#feedback.success{
+    background: rgb(135, 240, 167);
+    color: rgb(62, 158, 91);
+    opacity: 1;
+    transform: rotateX(0deg);
+}
+
+#feedback.failure{
+    background: rgb(255, 179, 179);
+    color: rgb(241, 67, 67);
+    opacity: 1;
+    transform: rotateX(0deg);
+}
+
+#feedback.closed {
+    transform: rotateX(90deg);
+    opacity: 0;
+}
+
+.feedback-headline {
+    font-weight: bold;
+    font-size: 1.5em;
+}

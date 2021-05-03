@@ -1,0 +1,6 @@
+/.vs/neotiv_testTask/DesignTimeBuild/*
+/.vs/neotiv_testTask/*
+/CovidServerTests/bin/*
+/CovidServerTests/obj/*
+/neotiv_testTask/bin/*
+/neotiv_testTask/obj/*
